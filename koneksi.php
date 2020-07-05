@@ -6,4 +6,5 @@ $password="";
 $database="project_a";
 
 $con=mysqli_connect($host,$username,$password,$database);
+
 ?>

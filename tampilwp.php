@@ -1,26 +1,28 @@
 <?php
 
-	$id = $_GET['id'];
-require_once ('koneksi.php');
+	$id = $_GET['id']; //ini yg dilempar ke url di android RetrofitClient
 
-$sql = "SELECT * FROM water_pump WHERE id=$id";
+	//Importing database
+	require_once('koneksi.php');
 
-$r = mysqli_query ($sql,$con);
+	//query select ke tabel waterpump , diselect per ID
+	$sql = "SELECT * FROM water_pump WHERE id=$id";
 
-$result = array();
+	//Mendapatkan Hasil
+	$r = mysqli_query($con,$sql);
 
-$row = mysqli_fetch_array($r);
+	//Memasukkan Hasil Kedalam Array
+	$result = array();
+	$row = mysqli_fetch_array($r);
+	array_push($result,array(
+			"id"=>$row['id'],
+			"water_pump"=>$row['water_pump'],
+			"status"=>$row['status'],
+			"shift"=>$row['shift']
+		));
 
-array_push($result, array(
-	"id" => $row['id'],
-	"water_pump" => $row['water_pump'],
-	"shift" => $row['shift'],
-	"status" => $row['status'],
-	));
-
-//Menampilkan Array dalam Format JSON
+	//Menampilkan dalam format JSON
 	echo json_encode(array('result'=>$result));
 
 	mysqli_close($con);
-
 ?>
