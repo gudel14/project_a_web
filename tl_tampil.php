@@ -6,7 +6,7 @@
 	require_once('koneksi.php');
 
 	//query select ke tabel waterpump , diselect per ID
-	$sql = "SELECT * FROM water_pump WHERE id=$id";
+	$sql = "SELECT * FROM tower_lamp WHERE id=$id";
 
 	//Mendapatkan Hasil
 	$r = mysqli_query($con,$sql);
@@ -16,16 +16,10 @@
 	$row = mysqli_fetch_array($r);
 	array_push($result,array(
 			"id"=>$row['id'],
-			"water_pump"=>$row['water_pump'],
+			"lamp"=>$row['lamp'],
 			"status"=>$row['status'],
 			"shift"=>$row['shift'],
 			"hm"=>$row['hm']
-			"hm"=>$row['fuel_rate']
-			"hm"=>$row['engine_load']
-			"hm"=>$row['hm']
-			"hm"=>$row['hm']
-			"hm"=>$row['hm']
-
 		));
 
 	//Menampilkan dalam format JSON

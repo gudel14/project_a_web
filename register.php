@@ -19,6 +19,6 @@
 		}
 
 	}else{
-		echo json_encode( "Paremeter Tidak Ditemukan");
+		echo json_encode("Paremeter Tidak Ditemukan");
 	}
 ?>

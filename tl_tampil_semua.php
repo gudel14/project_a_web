@@ -4,7 +4,7 @@
 	require_once('koneksi.php');
 
 	//Membuat SQL Query
-	$sql = "SELECT * FROM water_pump";
+	$sql = "SELECT * FROM tower_lamp";
 
 	//Mendapatkan Hasil
 	$r = mysqli_query($con,$sql);
@@ -17,8 +17,7 @@
 		//Memasukkan Nama dan ID kedalam Array Kosong yang telah dibuat
 		array_push($result,array(
 			"id"=>$row['id'],
-			"water_pump"=>$row['water_pump'],
-			"hm"=>$row['hm']
+			"lamp"=>$row['lamp']
 		));
 	}
 
