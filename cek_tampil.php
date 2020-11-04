@@ -6,7 +6,7 @@
 	require_once('koneksi.php');
 
 	//query select ke tabel waterpump , diselect per ID
-	$sql = "SELECT * FROM water_pump WHERE id=$id";
+	$sql = "SELECT * FROM tb_cek WHERE id=$id";
 
 	//Mendapatkan Hasil
 	$r = mysqli_query($con,$sql);
@@ -16,18 +16,11 @@
 	$row = mysqli_fetch_array($r);
 	array_push($result,array(
 			"id"=>$row['id'],
-			"water_pump"=>$row['water_pump'],
-			"status"=>$row['status'],
+			"pompa"=>$row['pompa'],
+			"nama"=>$row['nama'],
 			"shift"=>$row['shift'],
-			"hm"=>$row['hm'],
-			"rpm"=>$row['rpm'],
-			"fuel_rate"=>$row['fuel_rate'],
-			"engine_load"=>$row['engine_load'],
-			"preasure"=>$row['preasure'],
-			"debit"=>$row['debit'],
-			"elevasi"=>$row['elevasi'],
 			"tanggal"=>$row['tanggal'],
-			"keterangan"=>$row['keterangan']
+			"hm"=>$row['hm']
 		));
 
 	//Menampilkan dalam format JSON

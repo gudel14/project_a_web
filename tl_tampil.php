@@ -19,7 +19,9 @@
 			"lamp"=>$row['lamp'],
 			"status"=>$row['status'],
 			"shift"=>$row['shift'],
-			"hm"=>$row['hm']
+			"hm"=>$row['hm'],
+			"fuel"=>$row['fuel'],
+			"tanggal"=>$row['tanggal']
 		));
 
 	//Menampilkan dalam format JSON

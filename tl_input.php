@@ -8,8 +8,12 @@
  	$shift=$_POST['shift'];
  	$status=$_POST['status'];
  	$hm=$_POST['hm'];
+ 	$tanggal=$_POST['tanggal'];
+ 	$fuel=$_POST['fuel'];
 
- 	$sql="INSERT INTO tower_lamp(lamp,shift,status,hm) values ('$lamp','$shift','$status','$hm')";
+ 	
+
+ 	$sql="INSERT INTO tower_lamp(lamp,shift,status,hm,tanggal,fuel) values ('$lamp','$shift','$status','$hm','$tanggal','$fuel')";
 
  	require_once ('koneksi.php');
 
